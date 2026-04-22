@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahir</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="navbar">
+      <a class="brand" href="#hero" aria-label="Home">
+        <img src="assets/logo.svg" alt="Nocturne logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="#features">Szolgáltatások</a>
+        <a href="#about">Korábbi munkáink</a>
+        <a href="#contact">Rendezvények</a>
+        <a class="nav-cta" href="#contact">Kapcsolat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-scroll">
+      <div class="hero-sticky">
+        <div class="container hero-frame">
+          <div class="hero-grid" aria-hidden="true">
+            <img src="assets/hero/Hero1.webp" alt="Hero image 1" />
+            <img src="assets/hero/Hero2.webp" alt="Hero image 2" />
+            <img src="assets/hero/Hero3.webp" alt="Hero image 3" />
+            <img src="assets/hero/Hero4.webp" alt="Hero image 4" />
+            <video autoplay muted loop playsinline aria-label="Hero center video">
+              <source
+                src="/Users/pepszi/Library/CloudStorage/GoogleDrive-madacsi.peter.98@gmail.com/My Drive/Work/!Design projects and resources/Portfolio_v4/v3/Absolvo-comp.mp4"
+                type="video/mp4" />
+            </video>
+            <img src="assets/hero/Hero6.webp" alt="Hero image 6" />
+            <img src="assets/hero/Hero7.webp" alt="Hero image 7" />
+            <img src="assets/hero/Hero8.webp" alt="Hero image 8" />
+            <img src="assets/hero/Hero9.webp" alt="Hero image 9" />
+          </div>
+
+          <div class="hero-content">
+            <h1>Medium length hero heading goes here</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+              tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
+              erat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="content-section">
+      <div class="container content-card">
+        <h2>Features</h2>
+        <p>Scroll-synced motion, centered container layout, and reusable design tokens for dark UI variants.</p>
+      </div>
+    </section>
+
+    <section id="about" class="content-section">
+      <div class="container content-card">
+        <h2>About</h2>
+        <p>This page demonstrates a 3x3 zoom-out hero built with pure HTML, CSS, and vanilla JavaScript.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section">
+      <div class="container content-card">
+        <h2>Contact</h2>
+        <p>Use this scaffold to plug in your own copy, CTA, and section content.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
