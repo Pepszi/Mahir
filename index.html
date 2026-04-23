@@ -5,13 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mahir</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header class="site-header">
     <div class="navbar">
-      <a class="brand" href="#hero" aria-label="Home">
+      <a class="brand" href="index.html" aria-label="Home">
         <img src="assets/logo.svg" alt="Nocturne logo" />
       </a>
       <nav class="site-nav" aria-label="Fő navigáció">
@@ -136,10 +137,42 @@
         </div>
       </div>
     </section>
+
+    <section id="about" class="gallery-section">
+      <div class="container gallery-inner">
+        <h2>Stúdiónk</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <div class="swiper studio-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/hero/Hero1.webp" alt="Galéria kép 1" /></div>
+            <div class="swiper-slide"><img src="assets/hero/Hero4.webp" alt="Galéria kép 2" /></div>
+            <div class="swiper-slide"><img src="assets/hero/Hero8.webp" alt="Galéria kép 3" /></div>
+            <div class="swiper-slide"><img src="assets/hero/Hero9.webp" alt="Galéria kép 4" /></div>
+            <div class="swiper-slide"><img src="assets/gallery/Galeria5.webp" alt="Galéria kép 5" /></div>
+            <div class="swiper-slide"><img src="assets/hero/Hero6.webp" alt="Galéria kép 6" /></div>
+            <div class="swiper-slide"><img src="assets/hero/Hero1.webp" alt="Galéria kép 7" /></div>
+          </div>
+        </div>
+
+        <div class="gallery-controls">
+          <div class="gallery-pagination" aria-label="Galéria oldalak"></div>
+          <div class="gallery-nav-buttons">
+            <button class="gallery-button gallery-button-prev" type="button" aria-label="Előző kép">
+              <span aria-hidden="true">←</span>
+            </button>
+            <button class="gallery-button gallery-button-next" type="button" aria-label="Következő kép">
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 
