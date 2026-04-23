@@ -582,6 +582,68 @@ img {
   animation-play-state: paused;
 }
 
+.events-section {
+  position: relative;
+  height: 90vh;
+  height: 90svh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+.events-background-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.events-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.events-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.events-section h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.events-section p {
+  margin: 1.4rem 0 2rem;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 48ch;
+}
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0.5rem 0.75rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.82);
+  color: #ffffff;
+  background: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.2;
+  border-radius: 62rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
 @keyframes marqueeLeft {
   from {
     transform: translateX(0);
