@@ -35,9 +35,16 @@ export function initContactForm() {
     }
 
     try {
+      const formData = new FormData(contactForm);
+      const emailValue = formData.get("email");
+
+      if (typeof emailValue === "string" && emailValue.trim()) {
+        formData.set("_replyto", emailValue);
+      }
+
       const response = await fetch(getAjaxEndpoint(contactForm.action), {
         method: "POST",
-        body: new FormData(contactForm),
+        body: formData,
         headers: {
           Accept: "application/json",
         },
