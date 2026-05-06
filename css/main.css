@@ -276,7 +276,8 @@ img {
   grid-template-rows: repeat(3, 100vh);
   gap: 0;
   transform-origin: center center;
-  transform: translate(-50%, -50%) scale(var(--hero-zoom-scale));
+  transform: translate(-50%, -50%)
+    scale(var(--hero-zoom-scale-x, var(--hero-zoom-scale)), var(--hero-zoom-scale-y, var(--hero-zoom-scale)));
   will-change: transform;
 }
 
@@ -1035,6 +1036,24 @@ img {
   .hero-content {
     padding: 0.95rem 0.95rem 1.05rem;
     backdrop-filter: blur(0.3125rem);
+  }
+
+  .hero-grid {
+    --hero-zoom-scale: calc(3 - 2 * var(--hero-progress));
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 100vw;
+    grid-template-rows: repeat(3, 33.3333vh);
+  }
+
+  .hero-grid > :not(:nth-child(2)):not(:nth-child(5)):not(:nth-child(8)) {
+    display: none;
+  }
+
+  .hero-grid img,
+  .hero-grid video {
+    width: 100vw;
+    height: 33.3333vh;
   }
 
   .gallery-section {
