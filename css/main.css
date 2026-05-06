@@ -870,8 +870,6 @@ img {
   justify-content: space-between;
   gap: var(--space-3);
   flex-wrap: nowrap;
-  padding-top: 1.5rem;
-  border-top: 0.0625rem solid var(--header-border);
 }
 
 .site-footer-copy {
