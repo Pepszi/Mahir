@@ -12,6 +12,9 @@
   --work-copy-text: #252525;
   --work-card-border: #8f8f8f;
   --contact-link-text: #161616;
+  --footer-text: #1b1b1b;
+  --footer-line: #2a2a2a;
+  --footer-hover: #000000;
 
   /* Effects */
   --shadow-soft: 0 0.9375rem 2.5rem rgba(0, 0, 0, 0.35);
@@ -855,6 +858,66 @@ img {
   background: rgba(255, 255, 255, 0.14);
 }
 
+.site-footer {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 3.5rem 0;
+}
+
+.site-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: nowrap;
+  padding-top: 1.5rem;
+  border-top: 0.0625rem solid var(--header-border);
+}
+
+.site-footer-copy {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.site-footer-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  white-space: nowrap;
+}
+
+.site-footer-links a,
+.site-footer-links button {
+  font: inherit;
+  font-size: 0.8125rem;
+  color: inherit;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.site-footer-links a {
+  color: var(--text-primary);
+}
+
+.site-footer-links a:hover {
+  color: var(--text-primary);
+}
+
+.site-footer-links button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.site-footer-links button:hover {
+  color: var(--text-primary);
+}
+
 @keyframes marqueeLeft {
   from {
     transform: translateX(0);
@@ -984,6 +1047,10 @@ img {
 
   .work-marquee-content {
     gap: 0.9rem;
+  }
+
+  .site-footer {
+    padding: 2.5rem 0;
   }
 }
 
