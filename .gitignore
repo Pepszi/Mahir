@@ -1,3 +1,5 @@
 .DS_Store
 .cursor
-.github
+
+# ShipStudio metadata
+.shipstudio/
