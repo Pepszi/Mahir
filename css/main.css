@@ -592,6 +592,7 @@ img {
 
 .events-page-intro h1 {
   margin: 0;
+  align-self: stretch;
   font-size: clamp(1.9rem, 3vw, 2.75rem);
   line-height: 1.1;
   font-weight: 700;
@@ -616,6 +617,53 @@ img {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius-md);
+}
+
+.events-topics {
+  padding: 4.5rem 0 5rem;
+}
+
+.events-topics h2 {
+  text-align: center;
+  margin: 0 0 var(--space-5);
+}
+
+.events-topics__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.events-topics__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.events-topics__icon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.events-topics__item h3 {
+  margin: 0;
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.events-topics__item p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
 }
 
 .events-section {
@@ -1028,6 +1076,15 @@ img {
   .gallery-inner > p {
     margin-bottom: 1.75rem;
     font-size: 1rem;
+  }
+
+  .events-topics {
+    padding: var(--space-5) 0;
+  }
+
+  .events-topics__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
 
   .studio-swiper .swiper-slide {
