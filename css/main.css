@@ -8,6 +8,7 @@
   --accent: #c6a849;
   --accent-text: #1c404a;
   --header-border: rgba(255, 255, 255, 0.12);
+  --accordion-border: rgba(255, 255, 255, 0.2);
   --header-bg: rgba(28, 64, 74, 0.72);
   --nav-hover-bg: rgba(255, 255, 255, 0.1);
   --section-light-bg: #1c404a;
@@ -666,6 +667,83 @@ img {
   font-size: clamp(0.95rem, 1.2vw, 1.05rem);
 }
 
+.events-faq {
+  padding: 5rem 0;
+}
+
+.events-faq h2 {
+  text-align: center;
+  margin: 0 0 var(--space-5);
+}
+
+.events-faq .accordion {
+  width: min(100%, 48rem);
+  margin-inline: auto;
+  border-block: 0.0625rem solid var(--accordion-border);
+}
+
+.accordion__item {
+  border-block-start: 0.0625rem solid var(--accordion-border);
+}
+
+.accordion__item:first-child {
+  border-block-start: none;
+}
+
+.accordion__heading {
+  margin: 0;
+}
+
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion__trigger:focus-visible {
+  outline: 0.125rem solid var(--accent);
+  outline-offset: 0.25rem;
+  border-radius: var(--radius-sm);
+}
+
+.accordion__question {
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.accordion__icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--text-primary);
+  transition: transform 0.25s ease;
+}
+
+.accordion__trigger[aria-expanded="true"] .accordion__icon {
+  transform: rotate(180deg);
+}
+
+.accordion__content {
+  padding-bottom: var(--space-3);
+}
+
+.accordion__content p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.6;
+}
+
 .events-section {
   position: relative;
   height: 90vh;
@@ -1085,6 +1163,22 @@ img {
   .events-topics__grid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
+  }
+
+  .events-faq {
+    padding: var(--space-5) 0;
+  }
+
+  .events-faq h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .accordion__trigger {
+    padding: var(--space-2) 0;
+  }
+
+  .accordion__content {
+    padding-bottom: var(--space-2);
   }
 
   .studio-swiper .swiper-slide {
