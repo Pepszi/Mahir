@@ -44,7 +44,6 @@ Static marketing/presentation website built with semantic HTML, modern CSS, and 
 No build step is required. Serve the project as static files:
 
 ```bash
-cd /Users/pepszi/Documents/Dev/Mahir
 python3 -m http.server 5500
 ```
 
