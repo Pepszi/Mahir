@@ -151,6 +151,9 @@ img {
 }
 
 .site-nav .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
   color: var(--accent-text);
   background: var(--accent);
@@ -158,6 +161,12 @@ img {
   padding: 0.5rem 0.75rem;
   border-radius: 62rem;
   transition: background 0.25s ease, color 0.25s ease, filter 0.25s ease;
+}
+
+.site-nav .nav-cta svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
 }
 
 .site-nav .nav-cta:hover {
@@ -570,6 +579,45 @@ img {
   transform: rotate(180deg);
 }
 
+.events-page-intro {
+  padding: clamp(9rem, 18vh, 12rem) 0 var(--space-5);
+}
+
+.events-page-intro .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.events-page-intro h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3vw, 2.75rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.events-page-intro p {
+  margin: var(--space-3) 0 0;
+  max-width: 48ch;
+  color: var(--text-secondary);
+}
+
+.events-page-intro .button-primary {
+  margin-top: var(--space-4);
+}
+
+.events-page-intro__image {
+  align-self: stretch;
+  margin-top: var(--space-5);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
 .events-section {
   position: relative;
   height: 90vh;
@@ -762,6 +810,34 @@ img {
 
 .contact-form-status.is-pending {
   display: block;
+}
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 62rem;
+  background: var(--accent);
+  color: var(--accent-text);
+  text-decoration: none;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: filter 0.2s ease;
+}
+
+.button-primary svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+.button-primary:hover {
+  filter: brightness(0.92);
 }
 
 .button-secondary {
