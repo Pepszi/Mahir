@@ -14,6 +14,7 @@
   --section-light-bg: #1c404a;
   --contact-link-text: #D9D9D9;
   --status-success: #146c2e;
+  --status-success-bg: #e8f5ec;
   --status-error: #b42318;
 
   /* Effects */
@@ -23,7 +24,7 @@
   --radius-sm: 0.75rem;
   --radius-md: 1rem;
   --radius-lg: 1.25rem;
-  --header-radius: 2rem;
+  --header-radius: 1.5rem;
 
   /* Spacing */
   --space-1: 0.5rem;
@@ -478,7 +479,7 @@ img {
 }
 
 .gallery-section {
-  padding: 5rem 0 2.5rem;
+  padding: 5rem 0;
   overflow: hidden;
 }
 
@@ -932,6 +933,9 @@ img {
 
 .contact-form-status.is-success {
   display: block;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--status-success-bg);
   color: var(--status-success);
 }
 

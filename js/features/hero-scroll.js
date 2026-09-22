@@ -1,8 +1,31 @@
-export function initHeroScroll() {
+const GSAP_CORE_URL = "https://cdn.jsdelivr.net/npm/gsap@3.12.7/+esm";
+const GSAP_SCROLL_TRIGGER_URL = "https://cdn.jsdelivr.net/npm/gsap@3.12.7/ScrollTrigger.js/+esm";
+
+export async function initHeroScroll() {
   const root = document.documentElement;
   const heroSection = document.querySelector(".hero-scroll");
 
-  if (!window.gsap || !window.ScrollTrigger || !heroSection) {
+  if (!heroSection) {
+    return;
+  }
+
+  let gsap;
+  let ScrollTrigger;
+
+  try {
+    const [gsapModule, scrollTriggerModule] = await Promise.all([
+      import(GSAP_CORE_URL),
+      import(GSAP_SCROLL_TRIGGER_URL),
+    ]);
+
+    gsap = gsapModule.gsap ?? gsapModule.default;
+    ScrollTrigger = scrollTriggerModule.ScrollTrigger ?? scrollTriggerModule.default;
+  } catch (error) {
+    console.error("Failed to load GSAP for hero scroll", error);
+    return;
+  }
+
+  if (!gsap || !ScrollTrigger) {
     return;
   }
 
