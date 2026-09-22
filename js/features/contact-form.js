@@ -12,6 +12,28 @@ function getAjaxEndpoint(formAction) {
   return actionUrl.toString();
 }
 
+function getContactFormMessages() {
+  const isEnglish = document.documentElement.lang === "en";
+
+  if (isEnglish) {
+    return {
+      defaultButton: "Send",
+      pending: "Sending your message...",
+      submitting: "Sending...",
+      success: "Thank you! Your message has been sent.",
+      error: "Something went wrong while sending. Please try again.",
+    };
+  }
+
+  return {
+    defaultButton: "Küldés",
+    pending: "Üzenet küldése folyamatban...",
+    submitting: "Küldés...",
+    success: "Köszönjük! Az üzenet sikeresen elküldve.",
+    error: "Hiba történt küldés közben. Kérlek, próbáld újra.",
+  };
+}
+
 export function initContactForm() {
   const contactForm = document.querySelector("#contact-form");
   const contactFormStatus = document.querySelector("#contact-form-status");
@@ -20,18 +42,19 @@ export function initContactForm() {
     return;
   }
 
+  const messages = getContactFormMessages();
   const submitButton = contactForm.querySelector(".contact-submit");
-  const defaultButtonLabel = submitButton?.textContent || "Küldés";
+  const defaultButtonLabel = submitButton?.textContent || messages.defaultButton;
 
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     contactFormStatus.classList.remove("is-success", "is-error", "is-pending");
     contactFormStatus.classList.add("is-pending");
-    contactFormStatus.textContent = "Üzenet küldése folyamatban...";
+    contactFormStatus.textContent = messages.pending;
 
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = "Küldés...";
+      submitButton.textContent = messages.submitting;
     }
 
     try {
@@ -56,10 +79,10 @@ export function initContactForm() {
 
       contactForm.reset();
       contactFormStatus.classList.add("is-success");
-      contactFormStatus.textContent = "Köszönjük! Az üzenet sikeresen elküldve.";
+      contactFormStatus.textContent = messages.success;
     } catch (error) {
       contactFormStatus.classList.add("is-error");
-      contactFormStatus.textContent = "Hiba történt küldés közben. Kérlek, próbáld újra.";
+      contactFormStatus.textContent = messages.error;
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
