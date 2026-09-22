@@ -178,22 +178,28 @@ img {
 
 .lang-switcher {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.15rem;
   margin-left: 0.15rem;
+  margin-top: 0.5rem;
+}
+
+.lang-switcher--mobile {
+  display: none;
 }
 
 .lang-switcher__link {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.15rem;
   width: 1.75rem;
-  height: 1.75rem;
   padding: 0.2rem;
   border-radius: 0.35rem;
   text-decoration: none;
-  opacity: 0.7;
-  transition: opacity 0.2s ease, background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .lang-switcher__link:hover {
@@ -202,8 +208,19 @@ img {
 }
 
 .lang-switcher__link[aria-current="page"] {
-  opacity: 1;
   pointer-events: none;
+}
+
+.lang-switcher__link::after {
+  content: "";
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.lang-switcher__link[aria-current="page"]::after {
+  background: var(--text-primary);
 }
 
 .lang-switcher__flag {
@@ -278,14 +295,14 @@ img {
   display: none;
 }
 
-.mobile-nav-menu a {
+.mobile-nav-menu > a {
   text-decoration: none;
   color: var(--text-secondary);
   padding: 0.5rem 0.65rem;
   border-radius: 0.65rem;
 }
 
-.mobile-nav-menu a:hover {
+.mobile-nav-menu > a:hover {
   color: var(--text-primary);
   background: var(--nav-hover-bg);
 }
@@ -1117,15 +1134,6 @@ img {
     top: var(--services-title-sticky-top);
   }
 
-  .site-header {
-    width: min(calc(100% - 1rem), 45rem);
-  }
-
-  .navbar {
-    min-height: auto;
-    padding: 0.55rem 0.6rem;
-  }
-
   .hero-content {
     width: min(94%, 40rem);
   }
@@ -1257,7 +1265,7 @@ img {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .nav-links {
     display: none;
   }
@@ -1265,5 +1273,17 @@ img {
   .nav-toggle {
     display: inline-flex;
     position: relative;
+  }
+
+  .lang-switcher--desktop {
+    display: none;
+  }
+
+  .lang-switcher--mobile {
+    display: flex;
+    justify-content: center;
+    margin: 0.35rem 0 0;
+    padding-top: 0.45rem;
+    border-top: 0.0625rem solid var(--header-border);
   }
 }
