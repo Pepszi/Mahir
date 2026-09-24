@@ -367,7 +367,7 @@ img {
   position: relative;
   z-index: 1;
   text-align: center;
-  width: min(92%, 47.5rem);
+  width: min(92%, 55rem);
   background: rgba(28, 64, 74, 0.86);
   border: 0.0625rem solid var(--header-border);
   border-radius: var(--radius-lg);
